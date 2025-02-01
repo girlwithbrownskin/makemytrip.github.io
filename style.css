@@ -1,0 +1,89 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: #003580;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://source.unsplash.com/1600x900/?travel') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+}
+
+.search-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-form input, .search-form button {
+    padding: 10px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-form button {
+    background: #ff6f61;
+    color: white;
+    cursor: pointer;
+}
+
+/* Special Fare Categories */
+.special-fares {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+
+.fare-options span {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 8px 12px;
+    background: #ffcc00;
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+}
