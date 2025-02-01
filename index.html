@@ -1,16 +1,19 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MakeMyTrip Hero Section</title>
+    <title>MakeMyTrip - Book Your Journey</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navigation Bar-->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
-            <h1 class="logo">MakeMyTrip</h1>
+            <h1>MakeMyTrip</h1>
             <ul class="nav-links">
                 <li><a href="#">Flights</a></li>
                 <li><a href="#">Hotels</a></li>
@@ -22,29 +25,46 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <h2>Book Your Journey</h2>
-            <form class="search-form">
-                <input type="text" placeholder="From">
-                <input type="text" placeholder="To">
-                <input type="date">
-                <input type="date">
-                <button type="submit">Search</button>
-            </form>
+    <section class="hero">
+        <h2>Book Your Journey with Ease</h2>
+        <p>Find the best deals on flights, hotels, and more!</p>
 
-            <!-- Special Fare Categories -->
-            <div class="special-fares">
-                <h3>Special Fares</h3>
-                <div class="fare-options">
-                    <span>Student</span>
-                    <span>Senior Citizen</span>
-                    <span>Armed Forces</span>
-                    <span>Doctors & Nurses</span>
-                </div>
-            </div>
+        <!-- Search Form -->
+        <div class="search-form">
+            <input type="text" placeholder="From" id="from">
+            <input type="text" placeholder="To" id="to">
+            <input type="date" id="departure">
+            <input type="date" id="return">
+            <button onclick="searchTrip()">Search</button>
         </div>
-    </header>
+    </section>
+
+    <!-- Special Fares -->
+    <section class="special-fares">
+        <h3>Special Fares for</h3>
+        <div class="fare-options">
+            <span>Students</span>
+            <span>Senior Citizens</span>
+            <span>Armed Forces</span>
+            <span>Doctors & Nurses</span>
+        </div>
+    </section>
+
+    <script>
+        function searchTrip() {
+            let from = document.getElementById("from").value;
+            let to = document.getElementById("to").value;
+            let departure = document.getElementById("departure").value;
+            let returnDate = document.getElementById("return").value;
+
+            if (!from || !to || !departure) {
+                alert("Please fill in all required fields!");
+                return;
+            }
+
+            alert(`Searching for trips from ${from} to ${to} on ${departure}` + (returnDate ? ` returning on ${returnDate}` : ""));
+        }
+    </script>
 
 </body>
 </html>
