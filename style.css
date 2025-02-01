@@ -2,6 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
 /* Navigation Bar */
@@ -10,6 +11,11 @@ body, html {
     color: white;
     padding: 15px 0;
     text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .container {
@@ -33,57 +39,96 @@ body, html {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
 }
 
 /* Hero Section */
 .hero {
-    background: url('https://images.app.goo.gl/fiTtYMsVXcyYYMDi7') no-repeat center center/cover;
-    height: 100vh;
+    background: url('https://images.app.goo.gl/XGua2e3hyTZWH2re7') no-repeat center center/cover;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
     flex-direction: column;
+    padding: 20px;
+    margin-top: 60px;
 }
 
+/* Search Form */
 .search-form {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-form input, .search-form button {
-    padding: 10px;
-    width: 200px;
-    border: none;
+    padding: 12px;
+    width: 220px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-form input:focus {
+    border-color: #003580;
+    outline: none;
 }
 
 .search-form button {
     background: #ff6f61;
     color: white;
     cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+    border: none;
+}
+
+.search-form button:hover {
+    background: #e55b50;
 }
 
 /* Special Fare Categories */
 .special-fares {
     margin-top: 20px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
+    text-align: center;
+    color: white;
 }
 
 .fare-options span {
     display: inline-block;
-    margin: 5px 10px;
-    padding: 8px 12px;
+    margin: 8px 12px;
+    padding: 10px 14px;
     background: #ffcc00;
     color: black;
     border-radius: 5px;
     font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fare-options span:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-form input {
+        width: 100%;
+    }
+    .search-form button {
+        width: 100%;
+    }
 }
