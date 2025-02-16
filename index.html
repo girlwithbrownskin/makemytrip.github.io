@@ -3,68 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MakeMyTrip - Book Your Journey</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>MakeMyTrip Clone</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Background Image -->
+    <div class="background-container"></div>
+
+    <!-- Navbar -->
     <nav class="navbar">
-        <div class="container">
-            <h1>MakeMyTrip</h1>
-            <ul class="nav-links">
-                <li><a href="#">Flights</a></li>
-                <li><a href="#">Hotels</a></li>
-                <li><a href="#">Holidays</a></li>
-                <li><a href="#">Trains</a></li>
-                <li><a href="#">Cabs</a></li>
-            </ul>
+        <div class="logo">
+            <img src="logo.jpeg" alt="MakeMyTrip Logo">
+        </div>
+
+        <div class="nav-links">
+            <button class="login-btn">Login or Create Account</button>
+
+            <!-- Country Dropdown -->
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <i class="fas fa-flag"></i> India <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">🇺🇸 USA</a>
+                    <a href="#">🇦🇪 UAE</a>
+                    <a href="#">🇬🇧 UK</a>
+                    <a href="#">🇸🇬 Singapore</a>
+                </div>
+            </div>
+
+            <!-- Currency Dropdown -->
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <i class="fas fa-money-bill-wave"></i> INR <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">USD ($)</a>
+                    <a href="#">EUR (€)</a>
+                    <a href="#">GBP (£)</a>
+                    <a href="#">AED (د.إ)</a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Book Your Journey with Ease</h2>
-        <p>Find the best deals on flights, hotels, and more!</p>
+    <!-- Booking Section -->
+    <div class="booking-container">
+        <h2>Book Your Travel</h2>
+        <div class="booking-box">
+            <label>From:</label>
+            <select>
+                <option value="DEL">Delhi (DEL)</option>
+                <option value="BOM">Mumbai (BOM)</option>
+                <option value="BLR">Bangalore (BLR)</option>
+                <option value="HYD">Hyderabad (HYD)</option>
+                <option value="MAA">Chennai (MAA)</option>
+                <option value="BBI">Bhubaneswar (BBI)</option>
+            </select>
 
-        <!-- Search Form -->
-        <div class="search-form">
-            <input type="text" placeholder="From" id="from">
-            <input type="text" placeholder="To" id="to">
-            <input type="date" id="departure">
-            <input type="date" id="return">
-            <button onclick="searchTrip()">Search</button>
+            <label>To:</label>
+            <select>
+                <option value="BOM">Mumbai (BOM)</option>
+                <option value="BLR">Bangalore (BLR)</option>
+                <option value="HYD">Hyderabad (HYD)</option>
+                <option value="MAA">Chennai (MAA)</option>
+                <option value="DEL">Delhi (DEL)</option>
+                <option value="BBI">Bhubaneswar (BBI)</option>
+            </select>
+
+            <label>Date:</label>
+            <input type="date">
+            <button class="search-btn">Search</button>
         </div>
-    </section>
+    </div>
 
-    <!-- Special Fares -->
-    <section class="special-fares">
-        <h3>Special Fares for</h3>
-        <div class="fare-options">
-            <span>Students</span>
-            <span>Senior Citizens</span>
-            <span>Armed Forces</span>
-            <span>Doctors & Nurses</span>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 MAKEMYTRIP PVT. LTD.</p>
+            <p>Country: <b>India, USA, UAE</b></p>
+            <div class="social-icons">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-x-twitter"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-facebook"></i>
+            </div>
         </div>
-    </section>
-
-    <script>
-        function searchTrip() {
-            let from = document.getElementById("from").value;
-            let to = document.getElementById("to").value;
-            let departure = document.getElementById("departure").value;
-            let returnDate = document.getElementById("return").value;
-
-            if (!from || !to || !departure) {
-                alert("Please fill in all required fields!");
-                return;
-            }
-
-            alert(`Searching for trips from ${from} to ${to} on ${departure}` + (returnDate ? ` returning on ${returnDate}` : ""));
-        }
-    </script>
+    </footer>
 
 </body>
 </html>
